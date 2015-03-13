@@ -2,6 +2,10 @@
 title: Welcome to Middleman
 ---
 
+#thank-you.alert.alert-success.hidden{:role => "alert"}
+  %strong Thank You!
+  Kristin will be in touch soon.
+
 #headerwrap
   .container
     .col-lg-7
@@ -14,6 +18,7 @@ title: Welcome to Middleman
         %br/
         San Francisco.
 
+
 #y
   .container
     .row.centered
@@ -22,7 +27,7 @@ title: Welcome to Middleman
         %h3 Spaces
         %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s.
         %p
-          .btn.btn-theme{"data-toggle" => "modal", :href => "#myModal"}
+          .btn.btn-theme{"data-toggle" => "modal", :href => "#form-modal"}
             GET HELP
 
       .col-lg-4
@@ -30,7 +35,7 @@ title: Welcome to Middleman
         %h3 Projects
         %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s.
         %p
-          .btn.btn-theme{"data-toggle" => "modal", :href => "#myModal"}
+          .btn.btn-theme{"data-toggle" => "modal", :href => "#form-modal"}
             GET HELP
 
 
@@ -39,35 +44,41 @@ title: Welcome to Middleman
         %h3 Life
         %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s.
         %p
-          .btn.btn-theme{"data-toggle" => "modal", :href => "#myModal"}
+          .btn.btn-theme{"data-toggle" => "modal", :href => "#form-modal"}
             GET HELP
 
 
 
-      #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-        .modal-dialog
-          .modal-content
-            %form.form-horizontal{"accept-charset" => "UTF-8", :action => "https://formkeep.com/f/#{data.forms[environment].form_id}", :method => "POST"}
-              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+#form-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "form-modal", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      %form.form-horizontal{"accept-charset" => "UTF-8", :action => "https://formkeep.com/f/#{data.forms[environment].form_id}", :method => "POST"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
 
-              .modal-header
-                %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-                %h4.modal-title Get Help
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+          %h4.modal-title Get Help
 
-              .modal-body
-                .form-group
-                  %label.col-sm-2.control-label{for: "email"} Email
-                  .col-sm-10
-                    %input#email.form-control{placeholder: "Email", type: :email, name: "email"}/
+        .modal-body
+          .form-group
+            %label.col-sm-2.control-label{for: "name"} Name
+            .col-sm-10
+              %input#name.form-control{placeholder: "Name", name: "name"}/
 
-                .form-group
-                  %label.col-sm-2.control-label{for: "name"} Name
-                  .col-sm-10
-                    %input#name.form-control{placeholder: "Name", name: "name"}/
+          .form-group
+            %label.col-sm-2.control-label{for: "email"} Email
+            .col-sm-10
+              %input#email.form-control{placeholder: "Email", type: :email, name: "email"}/
+
+          .form-group
+            %label.col-sm-2.control-label{for: "comments"} Comments
+            .col-sm-10
+              %textarea#comments.form-control{placeholder: "Comments", name: "comments", rows: 5}
 
 
 
-              .modal-footer
-                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
-                %button.btn.btn-default{:type => "submit"} Submit
+
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
+          %button.btn.btn-default{:type => "submit"} Submit
 

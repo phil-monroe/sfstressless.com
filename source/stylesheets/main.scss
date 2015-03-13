@@ -121,6 +121,10 @@ a:after {
 
 /* Navbar Modification */
 
+.navbar {
+  margin-bottom: 0;
+}
+
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 color: #ffffff;
 background-color: #2c3e50;
@@ -140,6 +144,10 @@ background-color: #2c3e50;
 outline: 0;
 }
 
+.alert {
+  margin: 0;
+  text-align: center;
+}
 /* Form Modifications */
 
 .form-control {
@@ -169,8 +177,8 @@ input[type="submit"] {
 
 #headerwrap {
 	background: image-url("header-bg.jpg") no-repeat center top;
-	margin-top: 50px;
-	padding-top:20px;
+	margin-top: 0;
+	padding-top: 0;
 	background-attachment: relative;
 	background-position: center center;
 	min-height: 500px;

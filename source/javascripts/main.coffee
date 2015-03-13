@@ -1,5 +1,3 @@
 jQuery ->
-  $("[data-toggle='tooltip']").tooltip()
-
-  $('.carousel').carousel
-    interval: 3500
+  if(window.location.hash == '#thanks')
+    $('#thank-you').removeClass('hidden')
