@@ -1,5 +1,5 @@
 development:
   form_id: efbb0cabc5f9
 
-production:
+build:
   form_id: c3db7dd579e6
