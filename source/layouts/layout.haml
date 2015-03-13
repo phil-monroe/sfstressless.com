@@ -1,0 +1,32 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    / %link{:href => "assets/ico/favicon.png", :rel => "shortcut icon"}/
+    %title Stress Less!!
+
+    = stylesheet_link_tag 'application'
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      / # = javascript_include_tag 'html5shiv.js'
+      / # = javascript_include_tag 'respond.min.js'
+
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Raleway:400,300,700", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    = partial 'header'
+
+    = yield
+
+    = partial 'footer'
+
+
+    /
+      JavaScripts
+      \==================================================
+    / Placed at the end of the document so the pages load faster
+    = javascript_include_tag 'application'
