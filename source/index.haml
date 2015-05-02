@@ -8,7 +8,7 @@ title: Welcome to Middleman
 
 #headerwrap
   .container
-    .col-lg-7
+    .col-lg-5
       %h1
         Say hello to
         %br/
@@ -25,7 +25,7 @@ title: Welcome to Middleman
       .col-lg-4
         %span.glyphicon.glyphicon-home
         %h3 Spaces
-        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s.
+        %p= data.content.spaces
         %p
           .btn.btn-theme{"data-toggle" => "modal", :href => "#form-modal"}
             GET HELP
@@ -33,7 +33,7 @@ title: Welcome to Middleman
       .col-lg-4
         %span.glyphicon.glyphicon-check
         %h3 Projects
-        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s.
+        %p= data.content.projects
         %p
           .btn.btn-theme{"data-toggle" => "modal", :href => "#form-modal"}
             GET HELP
@@ -42,43 +42,11 @@ title: Welcome to Middleman
       .col-lg-4
         %span.glyphicon.glyphicon-calendar
         %h3 Life
-        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1500s.
+        %p= data.content.life
         %p
           .btn.btn-theme{"data-toggle" => "modal", :href => "#form-modal"}
             GET HELP
 
 
 
-#form-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "form-modal", :role => "dialog", :tabindex => "-1"}
-  .modal-dialog
-    .modal-content
-      %form.form-horizontal{"accept-charset" => "UTF-8", :action => "https://formkeep.com/f/#{data.forms[environment].form_id}", :method => "POST"}
-        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-
-        .modal-header
-          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-          %h4.modal-title Get Help
-
-        .modal-body
-          .form-group
-            %label.col-sm-2.control-label{for: "name"} Name
-            .col-sm-10
-              %input#name.form-control{placeholder: "Name", name: "name"}/
-
-          .form-group
-            %label.col-sm-2.control-label{for: "email"} Email
-            .col-sm-10
-              %input#email.form-control{placeholder: "Email", type: :email, name: "email"}/
-
-          .form-group
-            %label.col-sm-2.control-label{for: "comments"} Comments
-            .col-sm-10
-              %textarea#comments.form-control{placeholder: "Comments", name: "comments", rows: 5}
-
-
-
-
-        .modal-footer
-          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
-          %button.btn.btn-default{:type => "submit"} Submit
-
+= partial 'signup_form'

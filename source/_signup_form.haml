@@ -1,0 +1,156 @@
+#form-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "form-modal", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      %form.form-horizontal{"accept-charset" => "UTF-8", :action => "https://formkeep.com/f/#{data.forms[environment].form_id}", :method => "POST"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+          %h4.modal-title Get Help
+
+        .modal-body
+          .form-group
+            %label.col-sm-3.control-label{for: "name"} Name*
+            .col-sm-9
+              %input#name.form-control{placeholder: "Name", name: "name", required: true}/
+
+          .form-group
+            %label.col-sm-3.control-label{for: "email"} Email*
+            .col-sm-9
+              %input#email.form-control{placeholder: "Email", type: :email, name: "email", required: true}/
+
+          .form-group
+            %label.col-sm-3.control-label{for: "neighborhood"} Neighborhood
+            .col-sm-9
+              %select#neighborhood.form-control{placeholder: "Neighborhood", name: "neighborhood"}
+                %option
+                %option Alamo Square
+                %option Anza Vista
+                %option Ashbury Heights
+                %option Balboa Park
+                %option Balboa Terrace
+                %option Bayview
+                %option Belden Place
+                %option Bernal Heights
+                %option Buena Vista
+                %option Butchertown (Old and New)
+                %option Castro
+                %option Cathedral Hill
+                %option Cayuga Terrace
+                %option China Basin
+                %option Chinatown
+                %option Civic Center
+                %option Clarendon Heights
+                %option Cole Valley
+                %option Corona Heights
+                %option Cow Hollow
+                %option Crocker-Amazon
+                %option Design District
+                %option Diamond Heights
+                %option Dogpatch
+                %option Dolores Heights
+                %option Duboce Triangle
+                %option Embarcadero
+                %option Eureka Valley
+                %option Excelsior
+                %option Fillmore
+                %option Financial District
+                %option Financial District South
+                %option Fisherman's Wharf
+                %option Forest Hill
+                %option Forest Knolls
+                %option Glen Park
+                %option Golden Gate Heights
+                %option Haight-Ashbury
+                %option Hayes Valley
+                %option Hunters Point
+                %option India Basin
+                %option Ingleside
+                %option Ingleside Terraces
+                %option Inner Sunset
+                %option Irish Hill
+                %option Islais Creek
+                %option Jackson Square
+                %option Japantown
+                %option Jordan Park
+                %option Laguna Honda
+                %option Lake Street
+                %option Lakeside
+                %option Lakeshore
+                %option Laurel Heights
+                %option Little Hollywood
+                %option Little Russia
+                %option Little Saigon
+                %option Lone Mountain
+                %option Lower Haight
+                %option Lower Pacific Heights
+                %option Lower Nob Hill
+                %option Marina District
+                %option Merced Heights
+                %option Merced Manor
+                %option Midtown Terrace
+                %option Mid-Market
+                %option Miraloma Park
+                %option Mission Bay
+                %option Mission District
+                %option Mission Dolores
+                %option Mission Terrace
+                %option Monterey Heights
+                %option Mount Davidson
+                %option Nob Hill
+                %option Noe Valley
+                %option North Beach
+                %option North of Panhandle
+                %option Oceanview
+                %option Outer Mission
+                %option Outer Sunset
+                %option Pacific Heights
+                %option Parkmerced
+                %option Parkside
+                %option Parnassus
+                %option Polk Gulch
+                %option Portola
+                %option Portola Place
+                %option Potrero Hill
+                %option Presidio
+                %option Presidio Heights
+                %option Richmond District
+                %option Rincon Hill
+                %option Russian Hill
+                %option Saint Francis Wood
+                %option Sea Cliff
+                %option Sherwood Forest
+                %option Silver Terrace
+                %option Somisspo
+                %option South Beach
+                %option South End
+                %option South of Market
+                %option South Park
+                %option Sunnydale
+                %option Sunnyside
+                %option Sunset District
+                %option Telegraph Hill
+                %option Tenderloin
+                %option Treasure Island
+                %option Twin Peaks
+                %option Union Square
+                %option University Mound
+                %option Upper Market
+                %option Visitacion Valley
+                %option Vista del Mar
+                %option West Portal
+                %option Western Addition
+                %option Westwood Highlands
+                %option Westwood Park
+                %option Yerba Buena
+
+
+          .form-group
+            %label.col-sm-3.control-label{for: "comments"} Comments
+            .col-sm-9
+              %textarea#comments.form-control{placeholder: "Comments", name: "comments", rows: 5}
+
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cancel
+          %button.btn.btn-default{:type => "submit"} Submit
+
