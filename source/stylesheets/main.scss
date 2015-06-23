@@ -6,11 +6,21 @@ $hex4: #EF7126;
 $hex5: #8EDC9D;
 $hex6: #473E3F;
 
+// http://coolors.co/app/ffeb5b-7ac74f-a1cf6b-feb95f-e87461
+$body-background-color: #E87461;
+$main-color: #A1CF6B;
+$secondary-color: #E87461;
+$text-color-dark: #473E3F;
+$text-link-color: #FFEB5B; // originally #f85c37;
+$icon-color: white;
+
 $bg-color:      $hex6;
 $heading-color: white;
 $link-color:    white;
+
 body {
-  background-color: $bg-color;
+  // background-color: $bg-color;
+  background-color: $body-background-color;
   font-family: "Lato";
   font-weight: 300;
   font-size: 16px;
@@ -27,10 +37,9 @@ h1, h2, h3, h4, h5, h6 {
   color: $heading-color;
 }
 
-
 /* Paragraph & Typographic */
 p {
-  line-height: 28px;
+  line-height: 26px;
   margin-bottom: 25px;
 }
 
@@ -48,7 +57,7 @@ p {
 
 /* Links */
 a {
-  color: #f85c37;
+  color: $text-link-color;
   word-wrap: break-word;
 
   -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -88,21 +97,25 @@ hr {
 /* Button Theme Configuration */
 
 .btn {
-  border-radius: 0px;
+  // border-radius: 0px;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   font-weight: 100;
+  // background-color: rgba(255,255,255, 0.1)
+  background-color: #FFEB5B;
 }
 .btn-theme {
-  color: white;
-  background-color: transparent;
-  border-color: white;
-  padding-right: 10px;
-  padding-left: 10px;
+  color: $text-color-dark;
+  // background-color: transparent;
+  // border-color: white;
+  // padding-right: 10px;
+  // padding-left: 10px;
+  padding: 10px 20px;
 }
 
 .btn-theme:hover {
-  background-color: $hex4;
+  background-color: $body-background-color;
+  color: white;
 }
 
 
@@ -205,7 +218,7 @@ Wrap Sections
 #headerwrap h1 {
   margin-top: 70px;
   color: white;
-  font-size: 55px;
+  font-size: 70px;
   font-weight: 100;
   letter-spacing: 2px;
   text-align: left;
@@ -293,30 +306,38 @@ Wrap Sections
 
 /* Yellow Wrap */
 #y {
-  background: $hex1;
+  background: $main-color;
   padding-top: 50px;
   padding-bottom: 50px;
-  color: white;
+  color: $text-color-dark;
+  // color: white;
 
   .glyphicon {
     font-size: 60px;
+    color: $icon-color;
+    opacity: 0.5;
   }
 
   .glyphicon-home {
-    color: white;
+    // color: white;
   }
 
   .glyphicon-check {
-    color: $hex2  ;
+    // color: $hex2  ;
   }
 
   .glyphicon-calendar {
-    color: $hex5  ;
+    // color: $hex5  ;
   }
 
-  h3, .btn {
-    color: white;
+  h3 {
+    color: $text-color-dark;
     border: white;
+  }
+
+  h3 { 
+    font-weight: 900;
+    font-size: 20px;
   }
 
   p {
@@ -402,10 +423,16 @@ Wrap Sections
 /* Footer Wrap */
 
 #f {
-  background: $bg-color;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  background: $secondary-color;
   color: white;
+  font-weight: 500;
+  padding-bottom: 50px;
+  padding-top: 50px;
+
+  h3 {
+    color: white;
+    opacity: 0.5;
+  }
 }
 
 
