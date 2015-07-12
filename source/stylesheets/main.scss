@@ -7,12 +7,16 @@ $hex5: #8EDC9D;
 $hex6: #473E3F;
 
 // http://coolors.co/app/ffeb5b-7ac74f-a1cf6b-feb95f-e87461
-$body-background-color: #E87461;
-$main-color: #A1CF6B;
-$secondary-color: #E87461;
-$text-color-dark: #473E3F;
-$text-link-color: #FFEB5B; // originally #f85c37;
-$icon-color: white;
+$body-background-color: #666;
+$main-color: #A7DBD8; // #A1CF6B; // top fold
+$secondary-color: #69D2E7; // bottom fold
+$text-color-dark: #393D3F;
+$text-link-color: #F38630; // originally #f85c37;
+$icon-color: transparentize($text-color-dark, .6);
+
+// $btn-color: darken($main-color, 15%); 
+$btn-color: #F38630;
+$btn-hover-color: lighten($main-color, 20%);
 
 $bg-color:      $hex6;
 $heading-color: white;
@@ -21,9 +25,10 @@ $link-color:    white;
 body {
   // background-color: $bg-color;
   background-color: $body-background-color;
-  font-family: "Lato";
-  font-weight: 300;
-  font-size: 16px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  font-size: 14px;
   color: #555;
 
   -webkit-font-smoothing: antialiased;
@@ -32,8 +37,8 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway";
-  font-weight: 300;
+  font-family: "Montserrat";
+  font-weight: 700;
   color: $heading-color;
 }
 
@@ -59,6 +64,7 @@ p {
 a {
   color: $text-link-color;
   word-wrap: break-word;
+  font-weight: 700;
 
   -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
   -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -98,14 +104,14 @@ hr {
 
 .btn {
   // border-radius: 0px;
-  font-family: 'Lato', sans-serif;
-  font-size: 18px;
-  font-weight: 100;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   // background-color: rgba(255,255,255, 0.1)
-  background-color: #FFEB5B;
+  background-color: $btn-color; // #FFEB5B;
 }
 .btn-theme {
-  color: $text-color-dark;
+  color: white;
   // background-color: transparent;
   // border-color: white;
   // padding-right: 10px;
@@ -114,8 +120,8 @@ hr {
 }
 
 .btn-theme:hover {
-  background-color: $body-background-color;
-  color: white;
+  background-color: $btn-hover-color;
+  color: $text-color-dark;
 }
 
 
@@ -218,10 +224,11 @@ Wrap Sections
 #headerwrap h1 {
   margin-top: 70px;
   color: white;
-  font-size: 70px;
+  font-size: 75px;
   font-weight: 100;
-  letter-spacing: 2px;
+  letter-spacing: -1px;
   text-align: left;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #headerwrap2 {
@@ -315,7 +322,7 @@ Wrap Sections
   .glyphicon {
     font-size: 60px;
     color: $icon-color;
-    opacity: 0.5;
+    // opacity: 0.5;
   }
 
   .glyphicon-home {
@@ -336,12 +343,15 @@ Wrap Sections
   }
 
   h3 { 
-    font-weight: 900;
+    font-weight: 700;
     font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   p {
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 16px;
   }
 }
 
@@ -424,14 +434,17 @@ Wrap Sections
 
 #f {
   background: $secondary-color;
-  color: white;
+  // color: white;
   font-weight: 500;
   padding-bottom: 50px;
   padding-top: 50px;
 
   h3 {
-    color: white;
+    color: $text-color-dark;
     opacity: 0.5;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2px;
   }
 }
 
@@ -833,7 +846,7 @@ Pricing Tables
 
 }
 
-@media screen and (min-width: 700px) and (max-width: 1100px) {
+@media screen and (min-width: 700px) and (max-width: 100px) {
 
   #db .col-lg-2 {
     padding-left: 30%;
