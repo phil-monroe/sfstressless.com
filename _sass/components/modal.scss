@@ -17,6 +17,10 @@
   $modal-image-width: $modal-image-height;
   $modal-trigger-image-width: 300px;
 
+  $modal-header-background: #EF7126;
+  $modal-header-height: 4em;
+  $modal-header-color: white;
+
   label {
     cursor: pointer;
     margin-bottom: 0;
@@ -59,7 +63,7 @@
   .modal-close {
     @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
     @include size(1.5em);
-    background: $modal-background;
+    background: $modal-header-background;
     cursor: pointer;
 
     &:after,
@@ -67,7 +71,7 @@
       @include position(absolute, 3px 3px 0 50%);
       @include transform(rotate(45deg));
       @include size(0.15em 1.5em);
-      background: $modal-close-color;
+      background: $modal-header-color;
       content: '';
       display: block;
       margin: -3px 0 0 -1px;
@@ -75,7 +79,7 @@
 
     &:hover:after,
     &:hover:before {
-      background: darken($modal-close-color, 10%);
+      background: darken($modal-header-color, 10%);
     }
 
     &:before {
@@ -89,14 +93,12 @@
     border-radius: $base-border-radius;
     margin-top: 0;
     margin: auto;
-    max-height: 95%;
     overflow: auto;
     padding: $modal-padding / 2;
     position: relative;
     width: 95%;
 
     @include media($medium-screen) {
-      max-height: 70%;
       padding: $modal-padding;
       width: 60%;
     }
@@ -115,6 +117,20 @@
     p {
       color: $base-font-color;
       line-height: $base-line-height;
+    }
+
+    .modal-header {
+      color: $modal-header-color;
+      background: $modal-header-background;
+      @include position(absolute, 0 0 calc(100% - #{$modal-header-height}) 0 );
+      h1{
+        color: $modal-header-color;
+        padding: 1.5em;
+      }
+    }
+
+    .modal-body {
+      margin-top: $modal-header-height;
     }
 
     .modal-intro {
@@ -156,3 +172,23 @@
 }
 
 // Based on code by Kasper Mikiewicz
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-color: #FAFAFA;
+  border-radius: 0;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+");
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cccccc;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: inherit;
+  font-size: 0.77778rem;
+  line-height: normal;
+  padding: 0.44444rem;
+  border-radius: 0;
+  width: 100%;
+  height: 2.05556rem;
+}

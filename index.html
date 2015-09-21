@@ -64,178 +64,35 @@ services:
 
   <div class="modal-fade-screen">
     <div class="modal-inner">
-      <div class="modal-close" for="modal-1"></div>
-      <h1>Get Help Today!</h1>
+      <div class='modal-header'>
+        <h1>Get Help Today!</h1>
+        <div class="modal-close" for="modal-1"></div>
+      </div>
 
-      <form accept-charset="UTF-8" action="https://formkeep.com/f/{{ site.data.forms[site.environment].form_id }}" method="POST">
-        <input name="utf8" type="hidden" value="✓" />
+      <div class='modal-body'>
+        <form accept-charset="UTF-8" action="https://formkeep.com/f/{{ site.data.forms[site.environment].form_id }}" method="POST">
+          <input name="utf8" type="hidden" value="✓" />
 
-        <label for="name">Name*</label>
-        <input id="name" placeholder="Name" name="name" required=true />
+          <label for="name">Name*</label>
+          <input id="name" placeholder="Name" name="name" required=true />
 
-      </form>
+          <label for="email">Email*</label>
+          <input id="email" placeholder="Email" name="email" type="email" required=true />
 
+          <label for="neighborhood">Neighborhood</label>
+          <select id="neighborhood" placeholder="Neighborhood" name="neighborhood">
+            <option></option>
+            {% for neighborhood in site.data.neighborhoods %}
+              <option>{{ neighborhood }}</option>
+            {% endfor %}
+          </select>
+
+          <label for="comments">Comments</label>
+          <textarea id="comments" placeholder="Long term or short term?  What kind of project?  Who would I be working with? Tell me what matters to you!" name="comments" rows=5></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
-<!-- <div class="modal-header">
-          <button class="close">{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×</button>
-          <h4 class="modal-title">Get Help</h4>
-        </div>
-
-        <div class="modal-body">
-          <div class="form-group">
-            <div class="col-sm-9">
-              <input id="name" class="form-control" />{placeholder: "Name", name: "name", required: true}/</div>
-          </div>
-
-
-          <div class="form-group">
-            <label class="col-sm-3 control-label">{for: "email"} Email*</label>
-            <div class="col-sm-9">
-              <input id="email" class="form-control" />{placeholder: "Email", type: :email, name: "email", required: true}/</div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">{for: "neighborhood"} Neighborhood</label>
-            <div class="col-sm-9">
-              <select id="neighborhood" class="form-control">{placeholder: "Neighborhood", name: "neighborhood"}
-                <option></option>
-                <option>Alamo Square</option>
-                <option>Anza Vista</option>
-                <option>Ashbury Heights</option>
-                <option>Balboa Park</option>
-                <option>Balboa Terrace</option>
-                <option>Bayview</option>
-                <option>Belden Place</option>
-                <option>Bernal Heights</option>
-                <option>Buena Vista</option>
-                <option>Butchertown (Old and New)</option>
-                <option>Castro</option>
-                <option>Cathedral Hill</option>
-                <option>Cayuga Terrace</option>
-                <option>China Basin</option>
-                <option>Chinatown</option>
-                <option>Civic Center</option>
-                <option>Clarendon Heights</option>
-                <option>Cole Valley</option>
-                <option>Corona Heights</option>
-                <option>Cow Hollow</option>
-                <option>Crocker-Amazon</option>
-                <option>Design District</option>
-                <option>Diamond Heights</option>
-                <option>Dogpatch</option>
-                <option>Dolores Heights</option>
-                <option>Duboce Triangle</option>
-                <option>Embarcadero</option>
-                <option>Eureka Valley</option>
-                <option>Excelsior</option>
-                <option>Fillmore</option>
-                <option>Financial District</option>
-                <option>Financial District South</option>
-                <option>Fisherman's Wharf</option>
-                <option>Forest Hill</option>
-                <option>Forest Knolls</option>
-                <option>Glen Park</option>
-                <option>Golden Gate Heights</option>
-                <option>Haight-Ashbury</option>
-                <option>Hayes Valley</option>
-                <option>Hunters Point</option>
-                <option>India Basin</option>
-                <option>Ingleside</option>
-                <option>Ingleside Terraces</option>
-                <option>Inner Sunset</option>
-                <option>Irish Hill</option>
-                <option>Islais Creek</option>
-                <option>Jackson Square</option>
-                <option>Japantown</option>
-                <option>Jordan Park</option>
-                <option>Laguna Honda</option>
-                <option>Lake Street</option>
-                <option>Lakeside</option>
-                <option>Lakeshore</option>
-                <option>Laurel Heights</option>
-                <option>Little Hollywood</option>
-                <option>Little Russia</option>
-                <option>Little Saigon</option>
-                <option>Lone Mountain</option>
-                <option>Lower Haight</option>
-                <option>Lower Pacific Heights</option>
-                <option>Lower Nob Hill</option>
-                <option>Marina District</option>
-                <option>Merced Heights</option>
-                <option>Merced Manor</option>
-                <option>Midtown Terrace</option>
-                <option>Mid-Market</option>
-                <option>Miraloma Park</option>
-                <option>Mission Bay</option>
-                <option>Mission District</option>
-                <option>Mission Dolores</option>
-                <option>Mission Terrace</option>
-                <option>Monterey Heights</option>
-                <option>Mount Davidson</option>
-                <option>Nob Hill</option>
-                <option>Noe Valley</option>
-                <option>North Beach</option>
-                <option>North of Panhandle</option>
-                <option>Oceanview</option>
-                <option>Outer Mission</option>
-                <option>Outer Sunset</option>
-                <option>Pacific Heights</option>
-                <option>Parkmerced</option>
-                <option>Parkside</option>
-                <option>Parnassus</option>
-                <option>Polk Gulch</option>
-                <option>Portola</option>
-                <option>Portola Place</option>
-                <option>Potrero Hill</option>
-                <option>Presidio</option>
-                <option>Presidio Heights</option>
-                <option>Richmond District</option>
-                <option>Rincon Hill</option>
-                <option>Russian Hill</option>
-                <option>Saint Francis Wood</option>
-                <option>Sea Cliff</option>
-                <option>Sherwood Forest</option>
-                <option>Silver Terrace</option>
-                <option>Somisspo</option>
-                <option>South Beach</option>
-                <option>South End</option>
-                <option>South of Market</option>
-                <option>South Park</option>
-                <option>Sunnydale</option>
-                <option>Sunnyside</option>
-                <option>Sunset District</option>
-                <option>Telegraph Hill</option>
-                <option>Tenderloin</option>
-                <option>Treasure Island</option>
-                <option>Twin Peaks</option>
-                <option>Union Square</option>
-                <option>University Mound</option>
-                <option>Upper Market</option>
-                <option>Visitacion Valley</option>
-                <option>Vista del Mar</option>
-                <option>West Portal</option>
-                <option>Western Addition</option>
-                <option>Westwood Highlands</option>
-                <option>Westwood Park</option>
-                <option>Yerba Buena</option></select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label">{for: "comments"} Comments</label>
-            <div class="col-sm-9">
-              <textarea id="comments" class="form-control">{placeholder: "Long term or short term?  What kind of project?  Who would I be working with? Tell me what matters to you!", name: "comments", rows: 5}</textarea>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default">{"data-dismiss" => "modal", :type => "button"} Cancel</button>
-          <button class="btn btn-default">{:type => "submit"} Submit</button>
-        </div></form>
-    </div>
-  </div>
-</div> -->
