@@ -1,0 +1,15 @@
+# Site settings
+title: SF Stress Less
+
+email: kristin.l.fugitt@gmail.com
+
+description:
+
+baseurl: ""
+
+url: "https://sfstressless.com"
+
+environment: production
+
+# Build settings
+markdown: kramdown
