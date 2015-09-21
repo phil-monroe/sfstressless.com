@@ -66,9 +66,28 @@ section#about .about{
   }
 }
 
-section#highlight {
+section.highlight {
   p {
     text-align: center;
     font-size: 2em;
   }
+}
+
+.notification {
+  @include position(absolute, 0 0 null 0);
+  color: white;
+
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }

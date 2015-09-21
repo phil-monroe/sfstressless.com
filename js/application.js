@@ -18,4 +18,10 @@ $(function() {
   $(".modal-inner").on("click", function(e) {
     e.stopPropagation();
   });
+
+
+  if(window.location.hash == '#thanks'){
+    $('#thank-you').removeClass('hidden');
+    console.log($('#thank-you'));
+  }
 });
