@@ -58,11 +58,17 @@ section{
 section#about .about{
   @include align-items(stretch);
   @include display(flex);
-  @include flex-direction(row);
-  @include justify-content(flex-start);
+  @include justify-content(center);
+  @include flex-flow(row wrap);
 
   > .side {
-    @include flex(1);
+    @include flex(1 1 400px);
+    padding: 2em;
+
+    p, img {
+      font-size: 1.25em;
+      text-align: justify;
+    }
   }
 }
 
@@ -91,3 +97,4 @@ section.highlight {
 .hidden {
   display: none;
 }
+
